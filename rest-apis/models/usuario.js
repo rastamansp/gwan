@@ -25,11 +25,14 @@ module.exports = (context) => {
      * @return {void} 
      */
     function create(usuario, done) {
-        if (_.isObject(usuario)) {
-            done(null, new Usuario('', usuario.nome, usuario.idade, usuario.sexo));
-        } else {
-            done(message.internalError('Usuario invalido!'));
-        }
+        ///// seta usuario
+        const user = new model(usuario);
+
+        ////// salva novo usuario
+        user.save(function(err, data) {
+            ///// executa callback de cadastro
+            done(err, data);
+        });
     }
     /**
      * Atualizar o usuario.
