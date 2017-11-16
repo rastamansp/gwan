@@ -77,7 +77,8 @@ module.exports = (context) => {
         const query = { id: id };
         ///// executa remove
         model.remove(query, (err, data) => {
-            if (data.ok) {
+            ///// verifica caso tenha removido usuario
+            if (data.result.n > 0) {
                 ///// executa callback
                 done(null, { removed: true });
             } else {

@@ -35,11 +35,6 @@ module.exports.validator = (req, res, context) => {
         res.send(message.badRequest(errorList));
     }
 
-    console.log('=========================');
-    console.log('Validando corpo de requisição:');
-    console.log(req.body);
-    console.log('=========================');
-
     return errorList;
 
 };

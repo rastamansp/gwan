@@ -95,3 +95,14 @@ mutation criaUsuarioMutation {
   }
 }
 ```
+
+## Exemplo de mutation: Remover Usuario existente ##
+```
+mutation criaUsuarioMutation {
+  deleteUser(
+  	id: "100001062480512",
+  ) {
+    removed
+  }
+}
+```

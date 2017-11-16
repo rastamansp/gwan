@@ -11,6 +11,8 @@ const _ = require('lodash');
 const moment = require('moment');
 // mongoose
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+
 // Mongoose schema
 const Schema = mongoose.Schema;
 
