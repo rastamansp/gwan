@@ -16,6 +16,8 @@ module.exports = (context) => {
     const message = context.message();
     const Usuario = context.domain('usuario');
     const error = context.util('error');
+    const mongoose = require('mongoose');
+    const model = mongoose.model('MsgUser');
     /**
      * Criar usuario.
      * @param {object} usuario
@@ -63,19 +65,26 @@ module.exports = (context) => {
      * @return {void}
      */
     function find(id, done) {
-        if ((/^[0-9]+$/g).test(id) && parseInt(id, 10) > 99999) {
-            done(message.semanticError('ID contem mais de 5 digitos.'));
-        } else if ((/^[0-9]+$/g).test(id) && parseInt(id, 10) === 1) {
-            done(null, new Usuario(_.padStart(parseInt(id, 10), 5, '0'), 'João da Silva', 23, 'masculino'));
-        } else {
-            done(message.noContent());
-        }
+        const query = {
+            id: id
+        };
+
+        ///// executa busca
+        model.findOne(query, (err, data) => {
+            ///// executa callback
+            done(err, data);
+        });
     }
 
     function findAll(done) {
-        const users = [];
+        const query = {};
 
-        done(null, users);
+        model.find(query, (err, data) => {
+            ///// executa callback
+            done(null, data);
+        });
+
+        //done(null, users);
     }
     return {
         create,

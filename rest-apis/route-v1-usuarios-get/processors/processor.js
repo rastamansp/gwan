@@ -21,6 +21,10 @@ function processor(req, context, done) {
         if (erro) {
             done(erro);
         } else {
+            console.log('=========================');
+            console.log('resultado');
+            console.log(JSON.stringify(resultado));
+            console.log('=========================');
             done(null, resultado);
         }
     });

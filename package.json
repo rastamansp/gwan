@@ -1,35 +1,36 @@
 {
-  "name": "full-project",
-  "version": "1.0.0",
-  "description": "Projeto em colaboração para desenvolver aplicação padrão comercial a ser utilizada pelo time",
-  "main": "index.js",
-  "scripts": {
-    "babel": "babel-node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rastamansp/gwan.git"
-  },
-  "author": "@rastamansp",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rastamansp/gwan/issues"
-  },
-  "homepage": "https://github.com/rastamansp/gwan#readme",
-  "dependencies": {
-    "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "express-graphql": "^0.6.11",
-    "graphql": "^0.11.7",
-    "lodash": "^4.17.4",
-    "moment": "^2.19.2",
-    "mongoose": "^4.13.2",
-    "nodemon": "^1.12.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
-  }
+    "name": "full-project",
+    "version": "1.0.0",
+    "description": "Projeto em colaboração para desenvolver aplicação padrão comercial a ser utilizada pelo time",
+    "main": "index.js",
+    "scripts": {
+        "start": "clear && nodemon app.js",
+        "babel": "babel-node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rastamansp/gwan.git"
+    },
+    "author": "@rastamansp",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rastamansp/gwan/issues"
+    },
+    "homepage": "https://github.com/rastamansp/gwan#readme",
+    "dependencies": {
+        "axios": "^0.17.1",
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "express-graphql": "^0.6.11",
+        "graphql": "^0.11.7",
+        "lodash": "^4.17.4",
+        "moment": "^2.19.2",
+        "mongoose": "^4.13.2",
+        "nodemon": "^1.12.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1"
+    }
 }

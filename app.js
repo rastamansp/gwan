@@ -6,6 +6,9 @@
 'use strict';
 const server = require('./lib/express')(__dirname);
 
+///// conecta ao banco de dados
+require('./db/config');
+
 server.create();
 ///// adiciona rota GraphQL
 server.setGraphQL();
