@@ -40,20 +40,48 @@ FullStack Project
 }
 ```
 
-## Exemplo de mutation: cadastro de novo usuario ##
+## Exemplo de mutation: Cadastrar Usuario Novo ##
 ```
 mutation criaUsuarioMutation {
   addUser(
   	id: "100001062480512",
   	nome: "Barbara Umbelino de Almeida",
   	imagem: "https://graph.facebook.com/100001062480512/picture?type=large",
-		dataNascimento: "01/09/1987",
+    dataNascimento: "31/12/9999",
   	sexo: "female",
   	pais: "Brasil",
   	estado: "SP",
   	cidade: "São Paulo",
-  	whatsapp: "+55 (11) 98722-1050",
-  	email: "barbaraumbelino@gmail.com"
+  	whatsapp: "+55 (11) 9999(-9999",
+  	email: "email@gmail.com"
+  ) {
+    id
+    nome
+    imagem
+    dataNascimento
+    sexo
+    estado
+    cidade
+    whatsapp
+    email
+  }
+}
+```
+
+## Exemplo de mutation: Editar Usuario existente ##
+```
+mutation criaUsuarioMutation {
+  addUser(
+  	id: "100001062480512",
+  	nome: "Barbara Umbelino de Almeida",
+  	imagem: "https://graph.facebook.com/100001062480512/picture?type=large",
+    dataNascimento: "31/12/9999",
+  	sexo: "female",
+  	pais: "Brasil",
+  	estado: "SP",
+  	cidade: "São Paulo",
+  	whatsapp: "+55 (11) 9999(-9999",
+  	email: "email@gmail.com"
   ) {
     id
     nome

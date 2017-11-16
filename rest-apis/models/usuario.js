@@ -42,11 +42,25 @@ module.exports = (context) => {
      * @return {void} 
      */
     function update(id, usuario, done) {
-        if (_.isString(id) && _.size(id) > 0 && _.isObject(usuario)) {
-            done(null, new Usuario(id, usuario.nome, usuario.idade, usuario.sexo));
-        } else {
-            done(message.internalError('Problema na atualização do usuario!'));
-        }
+        // if (_.isString(id) && _.size(id) > 0 && _.isObject(usuario)) {
+        //     done(null, new Usuario(id, usuario.nome, usuario.idade, usuario.sexo));
+        // } else {
+        //     done(message.internalError('Problema na atualização do usuario!'));
+        // }
+        const query = { id: id };
+        const body = usuario;
+
+        ///// executa update
+        model.update(query, body, (err, data) => {
+            ///// caso seja ok
+            if (data.ok) {
+                ///// executa callback
+                done(err, body);
+            } else {
+                ///// executa de erro
+                done(err, null);
+            }
+        });
     };
     /**
      * Remover usuario.
@@ -55,11 +69,22 @@ module.exports = (context) => {
      * @return {void}
      */
     function remove(id, done) {
-        if (_.isString(id) && _.size(id) > 0) {
-            done(null, {});
-        } else {
-            done(message.internalError('Problema na exclusão do usuario!'));
-        }
+        // if (_.isString(id) && _.size(id) > 0) {
+        //     done(null, {});
+        // } else {
+        //     done(message.internalError('Problema na exclusão do usuario!'));
+        // }
+        const query = { id: id };
+        ///// executa remove
+        model.remove(query, (err, data) => {
+            if (data.ok) {
+                ///// executa callback
+                done(null, { removed: true });
+            } else {
+                ///// executa callback
+                done(null, { removed: false });
+            }
+        });
     }
     /**
      * Consultar usuario.
