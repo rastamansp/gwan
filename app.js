@@ -1,6 +1,6 @@
 /**
  * @file Servidor de api-rest.
- * @author @pedroalmeida
+ * @author @pedroalmeida / @douglaspands
  * @since 2017-11-14
  */
 'use strict';
